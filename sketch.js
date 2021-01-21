@@ -21,17 +21,7 @@ function setup(){
     for(var i=0;i<500;i++){
        var drops = new Drop(i,0,5) 
     }
-    drop1= new Drop(random(0,500),0,5)
-    drop2= new Drop(random(0,500),0,5)
-    drop3= new Drop(random(0,500),0,5)
-    drop4= new Drop(random(0,500),0,5)
-    drop5= new Drop(random(0,500),0,5)
-    drop6= new Drop(random(0,500),0,5)
-    drop7= new Drop(random(0,500),0,5)
-    drop8= new Drop(random(0,500),0,5)
-    drop9= new Drop(random(0,500),0,5)
-    drop10= new Drop(random(0,500),0,5)
-    
+   
 
 }
 
