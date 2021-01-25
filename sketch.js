@@ -1,5 +1,5 @@
 var umbrella,thunderbolt
-
+var drop = []
 function preload(){
    umbrella = loadImage("umbrella/walking_1.png") 
    umbrella = loadImage("umbrella/walking_2.png") 
@@ -27,6 +27,9 @@ function setup(){
 
 function draw(){
  createCanvas(500,500)
+ 
+        
+}
 
-}   
+   
 
