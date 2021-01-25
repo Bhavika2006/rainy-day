@@ -27,7 +27,7 @@ function setup(){
 
 function draw(){
  createCanvas(500,500)
- 
+ man.display();
         
 }
 
