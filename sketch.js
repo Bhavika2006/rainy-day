@@ -1,35 +1,41 @@
-var umbrella,thunderbolt
-var drop = []
+const Engine = Matter.Engine
+const Body = Matter.Body
+const Bodies = Matter.Bodies
+const World = Matter.World
+var manImg,thunderboltImg
+drops = []
 function preload(){
-   umbrella = loadImage("umbrella/walking_1.png") 
-   umbrella = loadImage("umbrella/walking_2.png") 
-   umbrella = loadImage("umbrella/walking_3.png") 
-   umbrella = loadImage("umbrella/walking_4.png") 
-   umbrella = loadImage("umbrella/walking_5.png") 
-   umbrella = loadImage("umbrella/walking_6.png") 
-   umbrella = loadImage("umbrella/walking_7.png") 
-   umbrella = loadImage("umbrella/walking_8.png") 
-    thunderbolt = loadImage("thunderbolt/1.png")
-    thunderbolt = loadImage("thunderbolt/2.png")
-    thunderbolt = loadImage("thunderbolt/3.png")
-    thunderbolt = loadImage("thunderbolt/4.png")
+    manImg = loadImage("image/man/walking_1.png")  
+    manImg = loadImage("image/man/walking_2.png")  
+    manImg = loadImage("image/man/walking_3.png")  
+    manImg = loadImage("image/man/walking_4.png")  
+    manImg = loadImage("image/man/walking_5.png")  
+    manImg = loadImage("image/man/walking_6.png")  
+    manImg = loadImage("image/man/walking_7.png")  
+    manImg = loadImage("image/man/walking_8.png")  
+    thunderboltImg = loadImage("image/thunderbolt/1.png")
+    thunderboltImg = loadImage("image/thunderbolt/2.png")
+    thunderboltImg = loadImage("image/thunderbolt/3.png")
+    thunderboltImg = loadImage("image/thunderbolt/4.png")
 }
 
 function setup(){
-   
-    man = new Umbrella(250,300,40)
-    for(var i=0;i<500;i++){
-       var drops = new Drop(i,0,5) 
-    }
-   
+   createCanvas(400,400)
+    engine = Engine.create()
+    world = engine.world
+    
+    man = new Man(200,200,20)
 
 }
 
 function draw(){
- createCanvas(500,500)
- man.display();
-        
-}
-
-   
+  Engine.update(engine);
+   var maxDrops =100
+   for(i = 0;i<maxDrops;i++){
+       drop = new Drop(random(0,400),random(0,400))
+       drops.push(drop)
+   }
+    man.display();
+    drop.display();
+}   
 
